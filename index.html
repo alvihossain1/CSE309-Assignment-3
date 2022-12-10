@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- JQUERY -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+        integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Windy Live</title>
+</head>
+
+<body>
+
+    <div class="min-vh-100 bg-color">
+        <nav>
+            <a class="py-2" href="">
+                <h3><span><i class="fa-solid fa-cloud"></i></span> Windy Live</h3>
+            </a>
+            <ul class="d-flex align-items-center justify-content-center py-2">
+                <li><a class="p-2" href="">Home</a></li>
+                <li><a class="p-2" href="#footer">About Weather</a></li>
+            </ul>
+        </nav>
+
+        <!-- xxx -->
+        <div class="min-vh-100 d-flex align-items-center justify-content-center h-100">
+
+            <div class="content p-1 circled">
+                <div class="row h-100 m-0 p-0">
+                    <div class="col-lg-6 m-0 gutter">
+                        <div class="grid-item d-flex flex-column h-100 p-2 circled">
+                            <div class="grid-box h-100 w-100 d-flex align-items-center justify-content-center">
+                                <div class="form">
+                                    <label for="search" class="text-white w-100">Enter Location</label>
+                                    <input id="search" type="text" class="w-100" placeholder="Search">
+                                    <button id="search-button" class="p-2 mt-2 mybutton">Search</button>
+                                </div>
+                            </div>
+                            <div class="h-100 w-100">
+                                <div class="grid-box image-container">
+                                    <div class="overflow-hidden">
+                                        <img class="image" src="./svgs/clear-day.svg">
+                                    </div>
+                                    <div class="overflow-hidden">
+                                        <img class="image" src="./svgs/fog-day.svg">
+                                    </div>
+                                    <div class="overflow-hidden">
+                                        <img class="image" src="./svgs/partly-cloudy-day.svg">
+                                    </div>
+                                    <div class="overflow-hidden">
+                                        <img class="image" src="./svgs/rain.svg">
+                                    </div>
+                                    <div class="overflow-hidden">
+                                        <img class="image" src="./svgs/dust-wind.svg">
+                                    </div>
+                                    <div class="overflow-hidden">
+                                        <img class="image" src="./svgs/partly-cloudy-day-sleet.svg">
+                                    </div>
+                                    <div class="overflow-hidden">
+                                        <img class="image" src="./svgs/haze-day.svg">
+                                    </div>
+                                    <div class="overflow-hidden">
+                                        <img class="image" src="./svgs/partly-cloudy-night-snow.svg">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-6 m-0 gutter">
+                        <div class="grid-item h-100 circled">
+                            <div class="flex-container d-flex flex-column h-100 py-4">
+
+
+
+                                <!-- Flex Item -->
+                                <div class="flex-item">
+                                    <div class="card mb-4 gradient-custom" style="border-radius: 25px;">
+                                        <div class="card-body p-4">
+                                            <div class="d-flex justify-content-between flex-wrap">
+                                                <div>
+                                                    <h2 class="display-2"><strong><span
+                                                                id="temperature">--</span></strong></h2>
+                                                    <p id="country" class="text-muted-custom mb-0"></p>
+                                                    <p class="text-muted-custom mb-0">Name: <span id="city-name">--</span> </p>
+                                                    <p class="text-muted-custom mb-0">Weather: <span id="weather-status">--</span>
+                                                    </p>
+                                                    <p class="text-muted-custom mb-0">Feels Like: <span id="feels-like">--</span>
+                                                    </p>
+                                                    
+                                                    <p class="text-muted-custom mb-0">Min Temperature: <span id="temp-min">--</span></p>
+                                                    <p class="text-muted-custom mb-0">Max Temperature: <span  id="temp-max">--</span></p>
+                                                    
+                                                    <p class="text-muted-custom mb-0">Degree: <span id="degree">--</span></p>
+                                                    <p class="text-muted-custom mb-0">Time Zone: <span id="timeZone">--</span></p>
+                                                    <p class="text-muted-custom mb-0">Date: <span id="date">--</span></p>
+                                                    <p class="text-muted-custom mb-0">Time: <span id="time">--</span></p>
+                                                </div>
+                                                <div>
+                                                    <img id="icon-url" src="./svgs/clear-day.svg" width="150px">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Flex Item End  -->
+
+
+                                <!-- Flex Item -->
+                                <div class="flex-item">
+                                    <div class="card mb-4 gradient-custom" style="border-radius: 25px;">
+                                        <div class="card-body p-4">
+                                            <div class="d-flex justify-content-center flex-wrap gap-2 py-2">
+                                                <div class="box text-center p-3 rounded-3">
+                                                    <p class="text-muted-custom mb-0">Pressure</p>
+                                                    <p id="pressure" class="text-muted-custom mb-0">_</p>
+                                                </div>
+                                                <div class="box text-center p-3 rounded-3">
+                                                    <p class="text-muted-custom mb-0">Humidity</p>
+                                                    <p id="humidity" class="text-muted-custom mb-0">_</p>
+                                                </div>
+                                                <div class="box text-center p-3 rounded-3">
+                                                    <p class="text-muted-custom mb-0">Wind Speed</p>                                                    
+                                                    <p id="wind-speed" class="text-muted-custom mb-0">_</p>
+                                                </div>
+                                                <div class="box text-center p-3 rounded-3">
+                                                    <p class="text-muted-custom mb-0">Visibility</p>
+                                                    <p id="visibility" class="text-muted-custom mb-0">_</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Flex Item End  -->
+
+
+
+                                <!-- Flex Item -->
+                                <div class="flex-item">
+                                    <div class="card mb-4 gradient-custom" style="border-radius: 25px;">
+                                        <div class="card-body p-4">
+                                            <div class="d-flex justify-content-around flex-wrap text-center pb-3 pt-2">
+                                                <div class="weekly-item flex-column">
+                                                    <p class="weekly-temp small"><strong>-</strong></p>
+                                                    <img class="weekly-icon" src="./svgs/clear-day.svg" width="70px">
+                                                    <p class="weekly-status small"><strong>-</strong></p>
+                                                    <p class="weekly-day mb-0"><strong>Sun</strong></p>
+                                                </div>
+                                                <div class="weekly-item flex-column">
+                                                    <p class="weekly-temp small"><strong>-</strong></p>
+                                                    <img class="weekly-icon" src="./svgs/fog-day.svg" width="70px">
+                                                    <p class="weekly-status small"><strong>-</strong></p>
+                                                    <p class="weekly-day mb-0"><strong>Mon</strong></p>
+                                                </div>
+                                                <div class="weekly-item flex-column">
+                                                    <p class="weekly-temp small"><strong>-</strong></p>
+                                                    <img class="weekly-icon" src="./svgs/rain.svg" width="70px">
+                                                    <p class="weekly-status small"><strong>-</strong></p>
+                                                    <p class="weekly-day  mb-0"><strong>Tue</strong></p>
+                                                </div>
+                                                <div class="weekly-item flex-column">
+                                                    <p class="weekly-temp small"><strong>-</strong></p>
+                                                    <img class="weekly-icon" src="./svgs/haze-day.svg" width="70px">
+                                                    <p class="weekly-status small"><strong>-</strong></p>
+                                                    <p class="weekly-day mb-0"><strong>Wed</strong></p>
+                                                </div>
+                                                <div class="weekly-item flex-column">
+                                                    <p class="weekly-temp small"><strong>-</strong></p>
+                                                    <img class="weekly-icon" src="./svgs/partly-cloudy-day.svg" width="70px">
+                                                    <p class="weekly-status small"><strong>-</strong></p>
+                                                    <p class="weekly-day mb-0"><strong>Thu</strong></p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Flex Item End  -->
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- xxx -->
+
+        <footer id="footer" class="bg-dark text-white text-center text-lg-start">
+            <!-- Grid container -->
+            <div class="container p-4">
+                <!--Grid row-->
+                <div class="row">
+                    <!--Grid column-->
+                    <div class="col-lg-4 mb-4 mb-md-0">
+                        <h5><span><i class="fa-solid fa-cloud"></i></span>  Windy Live</h5>
+                        <p>
+                            Live weather analytical search - easy to find weather status and location data. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi, delectus.
+                        </p>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-lg-4 mb-4 mb-md-0">
+                        <h5><span><i class="fa-solid fa-magnifying-glass"></i></span>  Find</h5>
+                        <p>
+                            Live Weather Search to get more details about the current weather of the location. Make Searches easy and useful, easy to find.
+                        </p>
+                    </div>
+                    <!--Grid column-->
+                     <!--Grid column-->
+                     <div class="col-lg-4 mb-4 mb-md-0">
+                        <h5><span><i class="fa-solid fa-user"></i></span>  Contact</h5>
+                        <p class="m-0">-- Alvi Noor Hossain</p>
+                        <p class="m-0">-- 2020780@iub.edu.bd</p>
+                        <p class="m-0">-- Independent University, Bangladesh</p>
+                    </div>
+                    <!--Grid column-->
+                </div>
+                <!--Grid row-->
+            </div>
+            <!-- Grid container -->
+
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                © 2022 Copyright: Alvi Noor Hossain. CSE309 -- <a href="">Windy Live</a>
+            </div>
+            <!-- Copyright -->
+        </footer>
+
+    </div>
+
+</body>
+<!-- JavaScript Bundle with Popper -->
+<script src="./main.js" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
+
+</html>
